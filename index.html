@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Candy Parkour Rush</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="menu" class="screen active">
+        <div class="title-card">
+          <div class="badge">CANDY</div>
+          <h1>Parkour Rush</h1>
+          <p>عالم الحلوى والشكولاتة</p>
+        </div>
+
+        <div class="menu-buttons">
+          <button id="startBtn" class="primary-btn">ابدأ</button>
+          <button id="settingsBtn" class="secondary-btn">الإعدادات</button>
+        </div>
+      </div>
+
+      <div id="settingsModal" class="modal hidden">
+        <div class="modal-panel">
+          <h2>الإعدادات</h2>
+          <label class="switch-row">
+            <span>الصوت</span>
+            <input id="soundToggle" type="checkbox" checked />
+          </label>
+          <label class="switch-row">
+            <span>مستوى الصعوبة</span>
+            <select id="difficultySelect">
+              <option value="easy">سهل</option>
+              <option value="normal" selected>عادي</option>
+              <option value="hard">صعب</option>
+            </select>
+          </label>
+          <button id="closeSettings" class="primary-btn small">حفظ</button>
+        </div>
+      </div>
+
+      <div id="gameWrap" class="game-wrap hidden">
+        <div class="hud">
+          <div class="hud-box">
+            <span>الكؤوس</span>
+            <strong id="coinsText">0</strong>
+          </div>
+
+          <div class="speed-box hud-box">
+            <span>السرعة</span>
+            <div class="speed-bar">
+              <div id="speedFill"></div>
+            </div>
+            <small><span id="speedText">1</span> / <span id="goalText">10</span></small>
+          </div>
+
+          <div class="hud-box">
+            <span>المستوى</span>
+            <strong id="levelText">1</strong>
+          </div>
+        </div>
+
+        <canvas id="gameCanvas" width="420" height="720"></canvas>
+
+        <div id="shop" class="shop-panel">
+          <h3>تريد ميل</h3>
+          <div class="upgrade-grid">
+            <button class="upgrade-btn" data-upgrade="0">
+              <span class="color-box brown"></span>
+              <div>
+                <strong>درب 1</strong>
+                <small>10 كؤوس</small>
+              </div>
+            </button>
+            <button class="upgrade-btn" data-upgrade="1">
+              <span class="color-box gold"></span>
+              <div>
+                <strong>درب 3</strong>
+                <small>25 كؤوس</small>
+              </div>
+            </button>
+            <button class="upgrade-btn" data-upgrade="2">
+              <span class="color-box diamond"></span>
+              <div>
+                <strong>درب 5</strong>
+                <small>60 كؤوس</small>
+              </div>
+            </button>
+            <button class="upgrade-btn" data-upgrade="3">
+              <span class="color-box candy"></span>
+              <div>
+                <strong>درب 25</strong>
+                <small>150 كؤوس</small>
+              </div>
+            </button>
+            <button class="upgrade-btn" data-upgrade="4">
+              <span class="color-box thunder"></span>
+              <div>
+                <strong>درب 100</strong>
+                <small>300 كؤوس</small>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="touch-controls">
+          <div class="group left-right">
+            <button data-key="ArrowLeft" class="control-btn">A</button>
+            <button data-key="ArrowRight" class="control-btn">D</button>
+          </div>
+          <div class="group jump">
+            <button data-key="Space" class="control-btn jump-btn">W</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
